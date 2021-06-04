@@ -93,14 +93,17 @@ count.addEventListener('click', function() {
 let btn = document.querySelector('.subcard__btn-info'),
     info = document.querySelector('.subcard__info'),
     button = document.querySelector('.subcard__btn-comment'),
-    comment = document.querySelector('.subcard__comment');
+    comment = document.querySelector('.subcard__comment'),
+    delivery = document.querySelector('.subcard__delivery'),
+    subBtn = document.querySelector('.subcard__btn-delivery')
 
 btn.addEventListener('click', function() {
   info.classList.add('subcard__info-active');
   comment.classList.remove('subcard__comment-active');
   button.classList.remove('subcard__btn-comment-active');
   btn.classList.add('subcard__btn-info-active');
-
+  subBtn.classList.remove('subcard__btn-delivery-active');
+  delivery.classList.remove('subcard__delivery-active');
 });
 
 button.addEventListener('click', function() {
@@ -108,7 +111,19 @@ button.addEventListener('click', function() {
   info.classList.remove('subcard__info-active');
   btn.classList.remove('subcard__btn-info-active');
   button.classList.add('subcard__btn-comment-active');
+  subBtn.classList.remove('subcard__btn-delivery-active');
+  delivery.classList.remove('subcard__delivery-active');
 });
+
+subBtn.addEventListener('click', function() {
+  comment.classList.remove('subcard__comment-active');
+  info.classList.remove('subcard__info-active');
+  btn.classList.remove('subcard__btn-info-active');
+  button.classList.remove('subcard__btn-comment-active');
+  subBtn.classList.add('subcard__btn-delivery-active');
+  delivery.classList.add('subcard__delivery-active');
+});
+
 
 
 
